@@ -13,7 +13,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;           
+  passwordText.value = password;
 }
 
 //password criteria
@@ -56,15 +56,40 @@ var options = ["lowerCase", "upperCase", "numbers", "special"];
 // 
 function generatePassword() {
   var options = passwordCriteria()
-  if (options.wantsUpper === true && options.wantsLower === true && options.wantsSpecial === true && options.wantsNumbers === true) {
+  if (options.wantsUppercase === true) {
+    console.log("going to use uppercase");
+    generatePassword = generatePassword.concat(wantsUppercase);
+    console.log(options.length);
   }
-
-//   // console.log(options.length)
-//   // check in this password function if they said yes to each generate password type. 4 individual if statements
-//   // WHEN I answer each prompt
-//   // THEN my input should be validated and at least one character type should be selected
-//   // pull from arrays they said yes to
+  if (options.wantsLowercase === true) {
+    console.log("going to use lowercase");
+    generatePassword = generatePassword.concat(wantsLowercase);
+    console.log(options.length);
+  }
+  if (options.wantsNumbers === true) {
+    console.log("going to use numbers");
+    generatePassword = generatePassword.concat(wantsNumbers);
+    console.log(options.length);
+  }
+  if (options.wantsSpecial === true) {
+    console.log("going to use special");
+    generatePassword = generatePassword.concat(wantsSpecial);
+    console.log(options.length);
+  }
+// this code might end it?? Needs to be tweaked
+//     var generatePassword = function ();
+//     var results = [] 
+//     for (var randomNumber = Math.floor()* generatePassword.length);
+//     results.push(generatePassword[randomNumber]);
+//    }
+//    return results.join("");
 }
+  //   // console.log(options.length)
+  //   // check in this password function if they said yes to each generate password type. 4 individual if statements
+  //   // WHEN I answer each prompt
+  //   // THEN my input should be validated and at least one character type should be selected
+  //   // pull from arrays they said yes to
+
 
 
   // //using confirmed info and generating password 
@@ -76,5 +101,3 @@ function generatePassword() {
 
   // //display password
   // document.getElementById("password").innerHTML = resultPass;
-
- 
