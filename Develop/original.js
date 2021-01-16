@@ -5,18 +5,17 @@ var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
 var special = "!@#$%^&".split("");
 var numbers = "123456789".split("");
 
-//  Prompt instructions for the user to start
+//  Prompt instructions on pop up box for the user to start
 window.onload = alert("Hello! Please click 'Generate password' to start");
 
 // Main Function-write password
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
-//password criteria
+//password criteria - asking how long users wants password
 function passwordCriteria() {
   var userChoice = prompt("How long would you like your password? It must be between 8-128 characters")
   parseInt(userChoice)
@@ -39,22 +38,24 @@ function passwordCriteria() {
   // WHEN I answer each prompt
   var passwordOptions = {
     length: userChoice,
-    wantsLower: wantsLowercase,
-    wantsUpper: wantsUppercase,
-    wantsSpecial: wantsSpecial,
-    wantsNumbers: wantsNumbers,
-
+    wantsLower: true,
+    wantsUpper: true,
+    wantsSpecial: true,
+    wantsNumbers: true,
   }
+  
   return passwordOptions
-  console.log(passwordOptions.length)
+  console.log(passwordOptions.length);
 }
 
 // Generate the users password
+
 generateBtn.addEventListener("click", writePassword);
 var options = ["lowerCase", "upperCase", "numbers", "special"];
 
 function generatePassword() {
-  var options = passwordCriteria()
+  var options = passwordCriteria();
+
   if (options.wantsUppercase) {
     console.log("going to use uppercase");
     generatePassword = generatePassword.concat(wantsUppercase);
@@ -75,28 +76,30 @@ function generatePassword() {
     generatePassword = generatePassword.concat(wantsSpecial);
     console.log(options.length);
   }
-  // this code might end it?? Needs to be tweaked
-  //     var generatePassword = function ();
-  //     var results = [] 
-  //     for (var randomNumber = Math.floor()* generatePassword.length);
-  //     results.push(generatePassword[randomNumber]);
-  //    }
-  //    return results.join("");
+// else{
+//   for(var i =0; i<passwordCriteria; i++){
+//     var random = Math.floor(Math.random()*passwordCriteria.length);
+//   resultPass +=passwordCriteria[random]    
+// }
+
+  // Possible last statement??
+  //   var generatePassword = function (){
+  //   var results = [] 
+  //   for (var randomNumber = Math.floor()* generatePassword.length);
+  //   results.push(generatePassword[randomNumber]);
+  //  }
+  //  return results.join("");
+
 }
-  //   // console.log(options.length)
-  //   // check in this password function if they said yes to each generate password type. 4 individual if statements
-  //   // WHEN I answer each prompt
-  //   // THEN my input should be validated and at least one character type should be selected
-  //   // pull from arrays they said yes to
+// //using confirmed info and generating password
+// else{
+//   for(var i =0; i<passwordCriteria; i++){
+//     var random = Math.floor(Math.random()*passwordCriteria.length);
+//   resultPass +=passwordCriteria[random]    
+// }
 
+// check in this password function if they said yes to each generate password type. 4 individual if statements
 
-
-  // //using confirmed info and generating password 
-  // else{
-  //   for(var i =0; i<passwordCriteria; i++){
-  //     var random = Math.floor(Math.random()*passwordCriteria.length);
-  //   resultPass +=passwordCriteria[random]    
-  // }
-
-  // //display password
-  // document.getElementById("password").innerHTML = resultPass;
+// //display password
+// document.getElementById("password").innerHTML = resultPass;
+// © 2021 GitHub, Inc.
