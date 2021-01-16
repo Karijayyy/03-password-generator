@@ -1,4 +1,4 @@
-// set variables
+// set variables for password
 var generateBtn = document.querySelector("#generate");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -49,40 +49,39 @@ function passwordCriteria() {
   console.log(passwordOptions.length)
 }
 
-// Generate
+// Generate the users password
 generateBtn.addEventListener("click", writePassword);
 var options = ["lowerCase", "upperCase", "numbers", "special"];
 
-// 
 function generatePassword() {
   var options = passwordCriteria()
-  if (options.wantsUppercase === true) {
+  if (options.wantsUppercase) {
     console.log("going to use uppercase");
     generatePassword = generatePassword.concat(wantsUppercase);
     console.log(options.length);
   }
-  if (options.wantsLowercase === true) {
+  if (options.wantsLowercase) {
     console.log("going to use lowercase");
     generatePassword = generatePassword.concat(wantsLowercase);
     console.log(options.length);
   }
-  if (options.wantsNumbers === true) {
+  if (options.wantsNumbers) {
     console.log("going to use numbers");
     generatePassword = generatePassword.concat(wantsNumbers);
     console.log(options.length);
   }
-  if (options.wantsSpecial === true) {
+  if (options.wantsSpecial) {
     console.log("going to use special");
     generatePassword = generatePassword.concat(wantsSpecial);
     console.log(options.length);
   }
-// this code might end it?? Needs to be tweaked
-//     var generatePassword = function ();
-//     var results = [] 
-//     for (var randomNumber = Math.floor()* generatePassword.length);
-//     results.push(generatePassword[randomNumber]);
-//    }
-//    return results.join("");
+  // this code might end it?? Needs to be tweaked
+  //     var generatePassword = function ();
+  //     var results = [] 
+  //     for (var randomNumber = Math.floor()* generatePassword.length);
+  //     results.push(generatePassword[randomNumber]);
+  //    }
+  //    return results.join("");
 }
   //   // console.log(options.length)
   //   // check in this password function if they said yes to each generate password type. 4 individual if statements
