@@ -21,6 +21,7 @@ var toUpper = function (x) {
 // creates a variable for uppercase conversion
 alpha2 = alpha.map(toUpper);
 
+// welcome message
 window.onload = alert("Hello! Please click 'Generate password' to start");
 
 var get = document.querySelector("#generate");
@@ -53,11 +54,9 @@ function generatePassword() {
     if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
         alert("Please try again. You must choose at least one option.")
         choices = alert();
-
     }
     // 4 positive options
     else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
-
         choices = character.concat(number, alpha, alpha2);
     }
     // 3 positive options
@@ -109,7 +108,7 @@ function generatePassword() {
     // array placeholder for users password length
     var password = [];
 
-    // random choices variables:
+    // random choices variables
     for (var i = 0; i < enter; i++) {
         var pickChoices = choices[Math.floor(Math.random() * choices.length)];
         password.push(pickChoices);
